@@ -20,17 +20,17 @@ function Navbar() {
               <Link to='/'>
               <li className="nav-link">Home</li>
               </Link>
-              <Link to='/category/Full'>
+              <Link to='/categoria/Full'>
               <li className="nav-link">Full</li>
               </Link>
-              <Link to='/category/TKL'>
+              <Link to='/categoria/TKL'>
               <li className="nav-link">TKL</li>
               </Link>
-              <Link to='/category/60%'>
+              <Link to='/categoria/60'>
               <li className="nav-link">60%</li>
               </Link>
             </ul>
-            <Form contBuscar="Productos"/>
+            <Form contBuscar="teclados"/>
             <CartWidget/>
 
           </div>

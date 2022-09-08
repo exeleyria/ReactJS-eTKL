@@ -1,29 +1,30 @@
 import React, { useEffect, useState } from 'react';
-import ItemList from './ItemList';
-import teclados from '../Item/teclados';
+import { teclados } from '../Item/teclados';
+import { ItemList } from './ItemList';
+
 import { useParams } from 'react-router-dom';
 
-const ItemListContainer = () => {
-    const [teclado, setTeclados] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
+export const ItemListContainer = () => {
+    const [tecladoLista, setTecladoLista] = useState([])
     const {categoria} = useParams()
   
+    console.log(categoria)
 
     const getTeclados = () => new Promise((resolve, reject) => {
       if(categoria) {
-        setTimeout(()=> resolve(teclado.filter(item => item.categoria === categoria)), 2000)
+        setTimeout(()=> resolve(teclados.filter(item => item.categoria === categoria)), 2000)
       } else {
-        setTimeout(()=> resolve(teclado), 2000)
+        setTimeout(()=> resolve(teclados), 2000)
       }
     })
   
     useEffect(() => {
       getTeclados()
-      .then(teclado => setTeclados(teclado))
+      .then(teclados => setTecladoLista(teclados))
       .catch(error => console.error(error))
   
       return () => {
-        setTeclados([])
+        setTecladoLista([])
       }
   
     }, [categoria])
@@ -33,29 +34,11 @@ const ItemListContainer = () => {
     return (
       <>
         {
-          teclados.length ? <ItemList teclados={teclados} /> : <h1>Cargando...</h1>
+          tecladoLista.length ? <ItemList tecladoLista={tecladoLista} /> : <h1>Cargando...</h1>
         }
         
       </>
     )
 
-
-
-
-    {/*
-    useEffect(() => {
-      const getTeclados = new Promise((resolve, reject) => {
-        setTimeout(() => {resolve(teclado);        }, 2000);
-      });
-  
-      getTeclados
-        .then((response) => setTeclados(response))
-        .finally(() => setIsLoading(false));
-    }, []);
-  
-    return isLoading ? <h2>Cargando...</h2> : <ItemList teclados={teclados} />;
-  */}
-  };
-  
-  export default ItemListContainer;
+  }
   

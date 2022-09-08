@@ -1,7 +1,7 @@
 import ItemCount from "../Counter/ItemCount";
 
 
-const ItemDetail =({item}) =>{
+export const ItemDetail =({item}) =>{
     function onAdd(count){
         console.log(`Se han agregado ${count} productos al carrito`)
     }
@@ -22,6 +22,4 @@ const ItemDetail =({item}) =>{
         </article>
     )
 
-};
-
-export default ItemDetail;
+}

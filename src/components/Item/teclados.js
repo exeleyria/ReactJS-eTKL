@@ -1,9 +1,9 @@
-const teclados = [
+export const teclados = [
     {
         id: 1,
         nombre: "Teclado1",
         precio: "$10.000",
-        categoria: '60%',
+        categoria: '60',
         img: "https://i.ibb.co/MMnvsvW/teclado1.jpg",
         stock: "15",
       },
@@ -19,7 +19,7 @@ const teclados = [
         id: 3,
         nombre: "Teclado3",
         precio: "$5.000",
-        categoria: '60%',
+        categoria: '60',
         img: "https://i.ibb.co/LztkL4c/teclado3.png",
         stock: "1",
       },
@@ -35,7 +35,7 @@ const teclados = [
         id: 5,
         nombre: "Teclado5",
         precio: "$12.000",
-        categoria: 'Full',
+        categoria: "Full",
         img: "https://i.ibb.co/3FHVRGP/teclado5.jpg",
         stock: "9",
       },
@@ -47,6 +47,5 @@ const teclados = [
         img: "https://i.ibb.co/18sW77Q/teclado6.png",
         stock: "20",
       },
-];
-export default teclados;
+]
 

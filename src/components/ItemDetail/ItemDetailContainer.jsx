@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import ItemDetail from './ItemDetail';
-import teclados from '../Item/teclados';
+import { ItemDetail } from './ItemDetail';
+import { teclados } from '../Item/teclados';
 import {useParams} from 'react-router-dom';
 
-const ItemDetailContainer = () => {
+export const ItemDetailContainer = () => {
     const {id}= useParams()
-    const [item, setItem] = useState([]);
+    const [item, setItem] = useState();
 
     const GetProduct = () => new Promise((resolve, reject) =>{
-        setTimeout(()=> resolve(teclados.find(teclado => teclado.id === Number(id))), 2000)
+        setTimeout(()=> resolve(teclados.find(teclado=> teclado.id === Number(id))), 2000)
     })
    
     useEffect(() =>{
@@ -17,10 +17,11 @@ const ItemDetailContainer = () => {
     },[])
 
     return(
-        <ItemDetail item={item} />
+        <>
+        {
+          item ? <ItemDetail item={item}/> : <h1>Cargando...</h1>
+        }
+      </>
     )
 
-  };
-  
-  export default ItemDetailContainer;
-   
+  }

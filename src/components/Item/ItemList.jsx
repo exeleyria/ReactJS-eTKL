@@ -1,36 +1,15 @@
 import React, { useState } from "react";
-import Item from "./Item/Item";
+import { Item } from "./Item/Item";
 
-const ItemList = ({ teclados }) => {
+export const ItemList = ({ tecladoLista }) => {
     return (
         
       <div style={{display: 'flex', gap:'2rem'}}>
         {
-          teclados.map(teclados => <Item key={teclados.id} teclados={teclados}/>)
+          tecladoLista.map(teclado => <Item key={teclado.id} teclado={teclado}/>)
         }
 
       </div>
       
-      
-      
-      
-      
-      
-      
-      /*<div className="row">
-        {teclados.map((teclados) => {
-          return (
-            <Item
-              key={teclados.id}
-              nombre={teclados.nombre}
-              img={teclados.img}
-              precio={teclados.precio}
-            />
-          );  
-        })}
-      </div>*/
-    );
-  };
-  
-  export default ItemList;
-
+      );
+  }
