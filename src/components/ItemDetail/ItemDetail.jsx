@@ -1,4 +1,5 @@
 import ItemCount from "../Counter/ItemCount";
+import './ItemDetail.css'
 
 
 export const ItemDetail =({item}) =>{
@@ -8,14 +9,16 @@ export const ItemDetail =({item}) =>{
 
     return(
         <article>
-            <h1>{item.nombre}</h1>
             <div className="card-detail">
                 <div className="card-detail-left">
+                    <h1 className="text-center"> {item.nombre}</h1>
                     <img src={item.img} alt={item.nombre} className="img" />
                 </div>
                 <div className="card-detail-right">
-                    <p>{item.nombre}</p>
-                    <p>{item.precio}</p>
+                    <p>{item.descripcion}</p>
+                    <p>Marca: {item.marca}</p>
+                    <p>Precio: {item.precio}</p>
+                    <p>Stock: {item.stock} </p>
                     <ItemCount stock={item.stock} onAdd={onAdd} initial={1} sum={1} res={1}/>
                 </div>
             </div>
