@@ -1,10 +1,10 @@
 import React from 'react';
-import {FcSearch} from 'react-icons/fc';
+import {FaCartPlus} from 'react-icons/fa';
 
 const CartWidget = () => {
     return (
         <>
-            <FcSearch/>
+            <FaCartPlus/>
         </>
     );
 }

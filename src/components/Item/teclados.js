@@ -2,7 +2,7 @@ export const teclados = [
     {
         id: 1,
         nombre: "Ducky ONE",
-        precio: "$10.000",
+        precio: "10000",
         categoria: '60',
         marca: 'Ducky',
         descripcion: "Teclado mecánico de la marca Ducky, wireless 60%, 60 teclas",
@@ -12,7 +12,7 @@ export const teclados = [
       {
         id: 2,
         nombre: "Ducky G",
-        precio: "$20.000",
+        precio: "20000",
         categoria: 'TKL',
         marca: 'Ducky',
         descripcion: "Teclado mecánico de la marca Ducky, cableado TKL, 70 teclas",
@@ -22,17 +22,17 @@ export const teclados = [
       {
         id: 3,
         nombre: "Signal WHITE",
-        precio: "$5.000",
+        precio: "5000",
         categoria: '60',
         marca: 'Signal',
         descripcion: "Teclado mecánico de la marca Signal, wireless 60%, 60 teclas",
         img: "https://i.ibb.co/LztkL4c/teclado3.png",
-        stock: "1",
+        stock: "2",
       },
       {
         id: 4,
         nombre: "Redragon Trown",
-        precio: "$7.500",
+        precio: "7500",
         categoria: 'Full',
         marca: 'Redragon',
         descripcion: "Teclado mecánico de la marca Redragon, cableado full-size",
@@ -42,7 +42,7 @@ export const teclados = [
       {
         id: 5,
         nombre: "Ducky Dimanche",
-        precio: "$12.000",
+        precio: "12000",
         categoria: "Full",
         marca: 'Ducky',
         descripcion: "Teclado mecánico de la marca Ducky, cableado full-size",
@@ -52,7 +52,7 @@ export const teclados = [
       {
         id: 6,
         nombre: "Redragon Kiros",
-        precio: "$8.300",
+        precio: "8300",
         categoria: 'Full',
         marca: 'Redragon',
         descripcion: "Teclado mecánico de la marca Redragon, cableado full-size",

@@ -1,28 +1,50 @@
 import ItemCount from "../Counter/ItemCount";
 import './ItemDetail.css'
+import { Link } from "react-router-dom"
+import React, {useContext} from 'react';
+import { CarritoContext } from '../../context/carritoContext';
 
 
-export const ItemDetail =({item}) =>{
-    function onAdd(count){
-        console.log(`Se han agregado ${count} productos al carrito`)
-    }
+
+const ItemDetail =({item,sum, rest, count, agregaCarrito, visibleCount}) =>{
+    const {id, nombre, descripcion, precio, stock, img} = item
+    const {addItem} = useContext(CarritoContext);
 
     return(
-        <article>
-            <div className="card-detail">
-                <div className="card-detail-left">
-                    <h1 className="text-center"> {item.nombre}</h1>
-                    <img src={item.img} alt={item.nombre} className="img" />
-                </div>
-                <div className="card-detail-right">
-                    <p>{item.descripcion}</p>
-                    <p>Marca: {item.marca}</p>
-                    <p>Precio: {item.precio}</p>
-                    <p>Stock: {item.stock} </p>
-                    <ItemCount stock={item.stock} onAdd={onAdd} initial={1} sum={1} res={1}/>
+        
+        <>
+        {
+        id 
+        ?  
+        <div>
+            <div>
+                <h2>{nombre}</h2>
+                <img src={img} alt={nombre}/>
+                <div>
+                    <p>{descripcion}</p>
+                    <h2>${Intl.NumberFormat("de-DE").format(precio)}</h2>                    
+                    <h4>{stock} disponibles</h4>
+                    {
+                        visibleCount ?
+                        <>
+                        
+                        <ItemCount stock={stock} sum={sum} res={rest} count={count}/>
+                        <button disabled={count === 1} onClick={()=>{addItem(item, count); agregaCarrito()}} >Agregar</button>
+                        </>
+                        :
+                        <>
+                        <p >Se han agregado {count} unidades al carrito.</p>
+                        <Link to={"/cart"}><button>Finalizar compra</button></Link>
+                        </>
+                    }   
                 </div>
             </div>
-        </article>
+        </div>
+        :
+        <img className='loading' src='https://firebasestorage.googleapis.com/v0/b/libreria-studenta.appspot.com/o/img%2Floading.gif?alt=media&token=cd9e0cdf-dc55-42fe-8ce4-9e346847875d' alt='Loading'/>
+        }
+        </>
     )
 
 }
+export default ItemDetail

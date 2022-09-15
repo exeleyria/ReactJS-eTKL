@@ -31,7 +31,9 @@ function Navbar() {
               </Link>
             </ul>
             <Form contBuscar="teclados"/>
+            <Link to='/cart'>
             <CartWidget/>
+            </Link>
 
           </div>
         </div>
