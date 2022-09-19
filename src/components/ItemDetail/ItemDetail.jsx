@@ -34,7 +34,7 @@ const ItemDetail =({item,sumaCant, restaCant, count, agregaCarrito, visibleCount
                         :
                         <>
                         <p >Se han agregado {count} unidades al carrito.</p>
-                        <Link to={"/cart"}><button>Finalizar compra</button></Link>
+                        <Link to={"/cart"}><button>Terminar la compra</button></Link>
                         </>
                     }   
                 </div>

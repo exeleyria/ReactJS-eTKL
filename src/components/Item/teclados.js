@@ -7,7 +7,7 @@ export const teclados = [
         marca: 'Ducky',
         descripcion: "Teclado mecánico de la marca Ducky, wireless 60%, 60 teclas",
         img: "https://i.ibb.co/MMnvsvW/teclado1.jpg",
-        stock: "15",
+        stock: 15,
       },
       {
         id: 2,
@@ -17,7 +17,7 @@ export const teclados = [
         marca: 'Ducky',
         descripcion: "Teclado mecánico de la marca Ducky, cableado TKL, 70 teclas",
         img: "https://i.ibb.co/s507Kxs/teclado2.jpg",
-        stock: "5",
+        stock: 5,
       },
       {
         id: 3,
@@ -27,7 +27,7 @@ export const teclados = [
         marca: 'Signal',
         descripcion: "Teclado mecánico de la marca Signal, wireless 60%, 60 teclas",
         img: "https://i.ibb.co/LztkL4c/teclado3.png",
-        stock: "2",
+        stock: 2,
       },
       {
         id: 4,
@@ -37,7 +37,7 @@ export const teclados = [
         marca: 'Redragon',
         descripcion: "Teclado mecánico de la marca Redragon, cableado full-size",
         img: "https://i.ibb.co/FBwnrcN/teclado4.jpg",
-        stock: "7",
+        stock: 7,
       },
       {
         id: 5,
@@ -47,7 +47,7 @@ export const teclados = [
         marca: 'Ducky',
         descripcion: "Teclado mecánico de la marca Ducky, cableado full-size",
         img: "https://i.ibb.co/3FHVRGP/teclado5.jpg",
-        stock: "9",
+        stock: 9,
       },
       {
         id: 6,
@@ -57,7 +57,7 @@ export const teclados = [
         marca: 'Redragon',
         descripcion: "Teclado mecánico de la marca Redragon, cableado full-size",
         img: "https://i.ibb.co/18sW77Q/teclado6.png",
-        stock: "20",
+        stock: 20,
       },
 ]
 

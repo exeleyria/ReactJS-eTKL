@@ -1,5 +1,4 @@
 const ItemCount= ({stock, sumaCant,restaCant,count}) =>{
-    console.log(stock, sumaCant,restaCant,count);
     return(
 
         <div>
