@@ -7,7 +7,7 @@ import {useParams} from 'react-router-dom';
 export const ItemDetailContainer = () => {
     const {id}= useParams()
     const [item, setItem] = useState()
-    const [count, setCount] = useState(0)
+    const [count, setCount] = useState(1)
     const [visibleCount, setVisibleCount] = useState(true)
    
 
@@ -15,7 +15,7 @@ export const ItemDetailContainer = () => {
     const agregaCarrito =()=>{
         setVisibleCount(false);
     }
-const sumaCant =() => {
+    const sumaCant =() => {
         setCount(count + 1);
     }
     const restaCant =() => {
@@ -38,7 +38,7 @@ const sumaCant =() => {
 
     return (
       <div>  
-        {!item ? <p>Cargando...</p> : <>{<ItemDetail    item={item} sum={sumaCant}  rest={restaCant} count={count} agregaCarrito={agregaCarrito}  visibleCount={visibleCount}/>}</>}
+        {!item ? <p>Cargando...</p> : <>{<ItemDetail    item={item} sumaCant={sumaCant}  restaCant={restaCant} count={count} agregaCarrito={agregaCarrito}  visibleCount={visibleCount}/>}</>}
       </div>
   )
 }

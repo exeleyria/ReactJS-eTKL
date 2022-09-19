@@ -1,9 +1,11 @@
-const ItemCount= ({stock, sum,rest,count}) =>{
+const ItemCount= ({stock, sumaCant,restaCant,count}) =>{
+    console.log(stock, sumaCant,restaCant,count);
     return(
+
         <div>
-            <button disabled={count === 0} onClick={rest}>-</button>
+            <button disabled={count === 0} onClick={restaCant}>-</button>
             <div>{count}</div>
-            <button disabled={count === stock} onClick={sum}>+</button>
+            <button disabled={count === stock} onClick={sumaCant}>+</button>
         </div>
         
     )

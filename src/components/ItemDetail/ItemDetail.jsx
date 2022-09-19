@@ -6,7 +6,7 @@ import { CarritoContext } from '../../context/carritoContext';
 
 
 
-const ItemDetail =({item,sum, rest, count, agregaCarrito, visibleCount}) =>{
+const ItemDetail =({item,sumaCant, restaCant, count, agregaCarrito, visibleCount}) =>{
     const {id, nombre, descripcion, precio, stock, img} = item
     const {addItem} = useContext(CarritoContext);
 
@@ -28,8 +28,8 @@ const ItemDetail =({item,sum, rest, count, agregaCarrito, visibleCount}) =>{
                         visibleCount ?
                         <>
                         
-                        <ItemCount stock={stock} sum={sum} res={rest} count={count}/>
-                        <button disabled={count === 1} onClick={()=>{addItem(item, count); agregaCarrito()}} >Agregar</button>
+                        <ItemCount stock={item.stock} sumaCant={sumaCant} restaCant={restaCant} count={count}/>
+                        <button disabled={count === 0} onClick={()=>{addItem(item, count); agregaCarrito()}} >Agregar</button>
                         </>
                         :
                         <>
