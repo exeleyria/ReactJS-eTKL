@@ -1,12 +1,12 @@
-
-import React from 'react';
+import React, {useContext} from 'react';
 import Form from './form';
 import CartWidget from './CartWidget';
 import {Link} from 'react-router-dom';
+import { CarritoContext } from '../../context/carritoContext';
+
 function Navbar() {
-  
+  const {qCart} = useContext(CarritoContext);
  
-  
   return (
     < >
         <nav className="navbar navbar-expand-lg navbar-dark bg-success">
@@ -32,7 +32,7 @@ function Navbar() {
             </ul>
             <Form contBuscar="teclados"/>
             <Link to='/cart'>
-            <CartWidget/>
+            { qCart !== 0 ? <><CartWidget/></> : <div></div>}
             </Link>
 
           </div>
