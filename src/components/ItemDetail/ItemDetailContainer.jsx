@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import ItemDetail from './ItemDetail';
-import { teclados } from '../Item/teclados';
+//import { teclados } from '../Item/teclados';
 import {useParams} from 'react-router-dom';
+
+import db from '../../utils/firebase';
+import { doc, getDoc } from 'firebase/firestore';
+
 
 
 export const ItemDetailContainer = () => {
@@ -10,6 +14,8 @@ export const ItemDetailContainer = () => {
     const [count, setCount] = useState(1)
     const [visibleCount, setVisibleCount] = useState(true)
    
+   
+    
 
 
     const agregaCarrito =()=>{
@@ -25,16 +31,34 @@ export const ItemDetailContainer = () => {
 
 
 
-
-    const GetProduct = () => new Promise((resolve, reject) =>{
+    
+    /*const GetProduct = () => new Promise((resolve, reject) =>{
         setTimeout(()=> resolve(teclados.find(teclado=> teclado.id === Number(id))), 2000)
     })
-   
+    
+    /*
     useEffect(() =>{
         GetProduct()
         .then(response => setItem(response))
     },[])
-    
+    */
+
+    useEffect(() => {     getItem();
+    },[id]);
+
+
+    const getItem = async () => {
+        try {
+            const prod = doc(db, "TECLADOS", id)
+            const resp = await getDoc(prod)
+            const result = {id:resp.id, ...resp.data()};
+            setItem(result);
+        } catch (error) {
+            console.log('error', error);
+        }
+    }                                                                                                                                                       
+        
+
 
     return (
       <div>  

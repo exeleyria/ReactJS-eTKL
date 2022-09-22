@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { Item } from "./Item/Item";
+
 
 export const ItemList = ({ tecladoLista }) => {
     return (
@@ -13,3 +14,4 @@ export const ItemList = ({ tecladoLista }) => {
       
       );
   }
+
