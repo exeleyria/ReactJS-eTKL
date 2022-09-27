@@ -29,12 +29,12 @@ const ItemDetail =({item,sumaCant, restaCant, count, agregaCarrito, visibleCount
                         <>
                         
                         <ItemCount stock={item.stock} sumaCant={sumaCant} restaCant={restaCant} count={count}/>
-                        <button disabled={count === 0} onClick={()=>{addItem(item, count); agregaCarrito()}} >Agregar</button>
+                        <button disabled={count === 0} onClick={()=>{addItem(item, count); agregaCarrito()}} className='btn btn-success'>Agregar</button>
                         </>
                         :
                         <>
                         <p >Se han agregado {count} unidades al carrito.</p>
-                        <Link to={"/cart"}><button>Terminar mi compra</button></Link>
+                        <Link to={"/cart"}><button className='btn btn-success'>Terminar mi compra</button></Link>
                         </>
                     }   
                 </div>

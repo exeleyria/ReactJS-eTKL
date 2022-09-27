@@ -56,7 +56,7 @@ export default function Cart() {
    
 
     return (
-        <div >
+        <div  class="form-group">
             
             {cart.length === 0 ? (
                 <>
@@ -100,30 +100,33 @@ export default function Cart() {
                 <td className="tb-c">${Intl.NumberFormat("de-DE").format(sum)}</td>
                 {/*<td className="tb-c"><button className='btn btn-danger' onClick={()=>clearCart()}>Vaciar Carrito</button></td>*/}
                 </tr>
-                    </tbody>
-                    </table>
-                <form onSubmit={handlerSubmit} onChange={handlerChange} className='formulario'>
-                    <div>
-                        <div>
-                            <label>Nombre: </label><input type="text" name="nombre"/>
+                </tbody>
+                </table>
+                <form  className="form-group" onSubmit={handlerSubmit} onChange={handlerChange}>
+                    <div className="form-group">
+                        <div className="form-group">
+                            <label  className="form-label mt-1" >Nombre: </label><input type="text" name="nombre"/>
                         </div>
                         <div>
-                            <label>Apellido: </label><input type="text" name="apellido"/>
+                            <label className="form-label mt-1">Apellido: </label><input type="text" name="apellido"/>
                         </div>
                     </div>
                     <div>
-                        <div >
-                            <label>Teléfono: </label><input type="number" name="telefono"/>
+                        <div  className="form-group" >
+                            <label className="form-label mt-1">Teléfono: </label><input type="number" name="telefono"/>
                         </div>
                         <div>
-                            <label>Email: </label><input type="text" name="email"/>
+                            <label className="form-label mt-1">Email: </label><input type="text" name="email"/>
                         </div>
                     </div>
                     <div>
-                    <div><button className='btn'>Enviar Orden</button></div>
-                    <div><button className='btn' onClick={()=>clearCart()}>Vaciar Carrito</button></div>
+                    <div><button className='btn btn-success form-label mt-1'>Enviar Orden</button></div>
+                    <div><button className='btn btn-danger form-label mt-1' onClick={()=>clearCart()}>Vaciar Carrito</button></div>
                     </div>
-                </form>    
+                </form> 
+  
+              
+
         
         </>}
         </div>);
