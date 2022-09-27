@@ -102,7 +102,9 @@ export default function Cart() {
                 </tr>
                 </tbody>
                 </table>
+                
                 <form  className="form-group" onSubmit={handlerSubmit} onChange={handlerChange}>
+                    <h2>Ingrese sus datos:</h2>                
                     <div className="form-group">
                         <div className="form-group">
                             <label  className="form-label mt-1" >Nombre: </label><input type="text" name="nombre"/>
@@ -123,11 +125,7 @@ export default function Cart() {
                     <div><button className='btn btn-success form-label mt-1'>Enviar Orden</button></div>
                     <div><button className='btn btn-danger form-label mt-1' onClick={()=>clearCart()}>Vaciar Carrito</button></div>
                     </div>
-                </form> 
-  
-              
-
-        
+                </form>
         </>}
         </div>);
 }
