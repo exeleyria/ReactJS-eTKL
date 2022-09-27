@@ -1,16 +1,57 @@
 import { Link } from 'react-router-dom'; 
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import { CarritoContext } from '../../context/carritoContext';
+import Swal from 'sweetalert2'
+import { generateOrder } from '../../utils/firebase';
 
+const initialBuyer = {
+    nombre: "",
+    apellido: "",
+    telefono: "",
+    email: ""
+}
 
 
 export default function Cart() {
     const {qCart, cart, removeItem, clearCart} = useContext(CarritoContext);
-  
+    const [buyer, setBuyer] = useState(initialBuyer)
+
+    const handlerChange = (e)=> {
+        setBuyer({... buyer, [e.target.name]: e.target.value})
+    }
+
+    const handlerSubmit = (e)=>{
+        e.preventDefault();
+        if(buyer.nombre !== "" && buyer.apellido !== "" && buyer.telefono !== "" && buyer.email !== ""){
+            generateOrder(orden)
+            .then((res)=>{
+                new Swal({
+                    title: `Felicitaciones ${buyer.nombre}! Tu orden fue enviada con exito.`,
+                    text: `Numero de identificador de orden es: ${res.id}`,
+                    icon: 'success',
+                    confirmButtonText: 'Aceptar',
+                }).then(clearCart())
+            })
+        }else {
+            new Swal({
+                title: 'Atencion!',
+                text: 'Debe completar todos los campos',
+                icon: 'error'
+            })}
+    }
+
+    
     let sum = 0;
     for (let i = 0; i < cart.length; i++){
         sum += cart[i].cant * cart[i].precio;
     }
+
+    const orden = {
+        buyer,
+        cart,
+        sum
+    }
+
 
    
 
@@ -57,10 +98,32 @@ export default function Cart() {
                 <td className="tb-c">Total compra:</td>
                 <td className="tb-c">{qCart}</td>
                 <td className="tb-c">${Intl.NumberFormat("de-DE").format(sum)}</td>
-                <td className="tb-c"><button className='btn btn-danger' onClick={()=>clearCart()}>Vaciar Carrito</button></td>
+                {/*<td className="tb-c"><button className='btn btn-danger' onClick={()=>clearCart()}>Vaciar Carrito</button></td>*/}
                 </tr>
                     </tbody>
                     </table>
+                <form onSubmit={handlerSubmit} onChange={handlerChange} className='formulario'>
+                    <div>
+                        <div>
+                            <label>Nombre: </label><input type="text" name="nombre"/>
+                        </div>
+                        <div>
+                            <label>Apellido: </label><input type="text" name="apellido"/>
+                        </div>
+                    </div>
+                    <div>
+                        <div >
+                            <label>Teléfono: </label><input type="number" name="telefono"/>
+                        </div>
+                        <div>
+                            <label>Email: </label><input type="text" name="email"/>
+                        </div>
+                    </div>
+                    <div>
+                    <div><button className='btn'>Enviar Orden</button></div>
+                    <div><button className='btn' onClick={()=>clearCart()}>Vaciar Carrito</button></div>
+                    </div>
+                </form>    
         
         </>}
         </div>);
