@@ -2,8 +2,7 @@ import { initializeApp } from "firebase/app";
 import { addDoc, collection, getFirestore, Timestamp} from 'firebase/firestore';
 
 const firebaseConfig = {
-  /*apiKey: process.env.API_KEY,*/
-  apiKey: "AIzaSyAW6JKxh2OW9ZMVSs7xd-xS8gKitWKOkbo",
+  apiKey: process.env.REACT_APP_API_KEY,
   authDomain: "etkl-c30c7.firebaseapp.com",
   projectId: "etkl-c30c7",
   storageBucket: "etkl-c30c7.appspot.com",
@@ -22,7 +21,6 @@ export const generateOrder = async (orden) =>{
   })
   return newOrder;
 }
-
 
 
 
