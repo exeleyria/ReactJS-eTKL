@@ -30,7 +30,7 @@ function Navbar() {
               <li className="nav-link">60%</li>
               </Link>
             </ul>
-            <Form contBuscar="teclados"/>
+            <Form contBuscar="Teclados"/>
             <Link to='/cart'>
             { qCart !== 0 ? <><CartWidget/></> : <div></div>}
             </Link>

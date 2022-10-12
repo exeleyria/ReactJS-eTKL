@@ -13,10 +13,10 @@ const initialBuyer = {
 
 
 export default function Cart() {
-    const {qCart, cart, removeItem, clearCart,updateStock} = useContext(CarritoContext);
+    const {qCart, cart, removeItem, clearCart} = useContext(CarritoContext);
     const [buyer, setBuyer] = useState(initialBuyer)
     const handlerChange = (e)=> {
-        setBuyer({... buyer, [e.target.name]: e.target.value})
+        setBuyer({...buyer, [e.target.name]: e.target.value})
     }
     const handlerSubmit = (e)=>{
         e.preventDefault();
@@ -114,7 +114,7 @@ export default function Cart() {
                         </div>
                     </div>
                     <div>
-                    <div><button className='btn btn-success form-label mt-1'onClick={()=>updateStock()}>Enviar Orden</button></div>
+                    <div><button className='btn btn-success form-label mt-1'>Enviar Orden</button></div>
                     <div><button className='btn btn-danger form-label mt-1' onClick={()=>clearCart()}>Vaciar Carrito</button></div>
                     </div>
                 </form>
