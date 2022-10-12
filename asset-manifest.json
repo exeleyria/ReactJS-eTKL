@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/ReactJS-eTKL/static/css/main.7ea663ea.css",
+    "main.js": "/ReactJS-eTKL/static/js/main.c4e51dbc.js",
+    "index.html": "/ReactJS-eTKL/index.html",
+    "main.7ea663ea.css.map": "/ReactJS-eTKL/static/css/main.7ea663ea.css.map",
+    "main.c4e51dbc.js.map": "/ReactJS-eTKL/static/js/main.c4e51dbc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7ea663ea.css",
+    "static/js/main.c4e51dbc.js"
+  ]
+}
