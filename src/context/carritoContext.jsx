@@ -1,5 +1,6 @@
-
 import React, {createContext, useState} from 'react'
+import { collection, updateDoc,getFirestore, doc } from "firebase/firestore";
+
 
 export const CarritoContext = createContext();
 
@@ -31,7 +32,17 @@ export const CarritoProvider = ({children}) => {
         }
     };
 
+
+    const db = getFirestore();
+    
+    const updateStock = async(stock)=>{
+        await   updateDoc(doc(db, "TECLADOS", stock))
+        console(stock)
+
+
+    }
+    
     return (
-        <CarritoContext.Provider value={{cart, qCart, addItem, removeItem, clearCart}}>{children}</CarritoContext.Provider>
+        <CarritoContext.Provider value={{cart, qCart, addItem, removeItem, clearCart, updateStock}}>{children}</CarritoContext.Provider>
     )   
 }

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'; 
 import React, {useContext, useState} from 'react';
 import { CarritoContext } from '../../context/carritoContext';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 import { generateOrder } from '../../utils/firebase';
 
 const initialBuyer = {
@@ -13,13 +13,11 @@ const initialBuyer = {
 
 
 export default function Cart() {
-    const {qCart, cart, removeItem, clearCart} = useContext(CarritoContext);
+    const {qCart, cart, removeItem, clearCart,updateStock} = useContext(CarritoContext);
     const [buyer, setBuyer] = useState(initialBuyer)
-
     const handlerChange = (e)=> {
         setBuyer({... buyer, [e.target.name]: e.target.value})
     }
-
     const handlerSubmit = (e)=>{
         e.preventDefault();
         if(buyer.nombre !== "" && buyer.apellido !== "" && buyer.telefono !== "" && buyer.email !== ""){
@@ -39,7 +37,6 @@ export default function Cart() {
                 icon: 'error'
             })}
     }
-
     
     let sum = 0;
     for (let i = 0; i < cart.length; i++){
@@ -52,12 +49,8 @@ export default function Cart() {
         sum
     }
 
-
-   
-
     return (
-        <div  class="form-group">
-            
+        <div>
             {cart.length === 0 ? (
                 <>
                 <h1>El carrito se encuentra vacío.</h1>
@@ -84,7 +77,7 @@ export default function Cart() {
                 <tr>
                 <td><img src={i.img} alt={i.nombre}/></td>
                 <td>{i.id}</td>
-                <td><Link to ={`/item/${i.id}`}><spam >{i.nombre}</spam></Link></td>
+                <td><Link to ={`/item/${i.id}`}><span>{i.nombre}</span></Link></td>
                 <td className="tb-c">${Intl.NumberFormat("de-DE").format(i.precio)}</td>
                 <td className="tb-c">{i.cant}</td>
                 <td className="tb-c">${Intl.NumberFormat("de-DE").format(i.precio * i.cant)}</td>
@@ -98,7 +91,6 @@ export default function Cart() {
                 <td className="tb-c">Total compra:</td>
                 <td className="tb-c">{qCart}</td>
                 <td className="tb-c">${Intl.NumberFormat("de-DE").format(sum)}</td>
-                {/*<td className="tb-c"><button className='btn btn-danger' onClick={()=>clearCart()}>Vaciar Carrito</button></td>*/}
                 </tr>
                 </tbody>
                 </table>
@@ -122,7 +114,7 @@ export default function Cart() {
                         </div>
                     </div>
                     <div>
-                    <div><button className='btn btn-success form-label mt-1'>Enviar Orden</button></div>
+                    <div><button className='btn btn-success form-label mt-1'onClick={()=>updateStock()}>Enviar Orden</button></div>
                     <div><button className='btn btn-danger form-label mt-1' onClick={()=>clearCart()}>Vaciar Carrito</button></div>
                     </div>
                 </form>

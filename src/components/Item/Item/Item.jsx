@@ -18,7 +18,7 @@ export const Item = ({teclado}) => {
           </div>
           <div className="">
             <Link to={`/item/${teclado.id}`}>
-            <button className="btn btn-primary">Ver mas detalles</button>
+            <button className="btn btn-primary">Ver más detalles</button>
             </Link>
           </div>
         </div>

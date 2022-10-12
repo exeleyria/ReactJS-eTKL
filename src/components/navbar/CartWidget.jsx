@@ -3,17 +3,6 @@ import { Link } from "react-router-dom"
 import React, {useContext} from 'react';
 import { CarritoContext } from '../../context/carritoContext';
 
-/*const CartWidget = () => {
-    return (
-        <>
-            <FaCartPlus/>
-        </>
-    );
-}
-
-export default CartWidget;*/
-
-
 const CartWidget = () =>{
     const {qCart} = useContext(CarritoContext);
     return(

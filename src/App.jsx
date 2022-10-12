@@ -5,8 +5,6 @@ import { ItemDetailContainer } from './/components/ItemDetail/ItemDetailContaine
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Cart from './components/Carrito/Cart';
  
-
-
 const App = () => {
     return (
         <BrowserRouter>
@@ -22,5 +20,4 @@ const App = () => {
         </BrowserRouter>
     );
 }
-
 export default App;

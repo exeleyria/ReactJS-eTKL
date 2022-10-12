@@ -4,14 +4,11 @@ import { Link } from "react-router-dom"
 import React, {useContext} from 'react';
 import { CarritoContext } from '../../context/carritoContext';
 
-
-
 const ItemDetail =({item,sumaCant, restaCant, count, agregaCarrito, visibleCount}) =>{
     const {id, nombre, descripcion, precio, stock, img} = item
     const {addItem} = useContext(CarritoContext);
 
     return(
-        
         <>
         {
         id 
@@ -45,6 +42,5 @@ const ItemDetail =({item,sumaCant, restaCant, count, agregaCarrito, visibleCount
         }
         </>
     )
-
 }
 export default ItemDetail
