@@ -1,8 +1,8 @@
 const ItemCount= ({stock, sumaCant,restaCant,count}) =>{
     return(
-        <div>
+        <div className="d-flex flex-row">
             <button disabled={count === 0} onClick={restaCant} className='btn btn-success'>-</button>
-            <div>{count}</div>
+            <button className='btn'>{count}</button>
             <button disabled={count === stock} onClick={sumaCant} className='btn btn-success'>+</button>
         </div> 
     )

@@ -2,7 +2,7 @@
   "name": "etkl",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://exeleyria.github.io/",
+  "homepage": "https://exeleyria.github.io/ReactJS-eTKL/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
